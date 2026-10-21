@@ -1,0 +1,473 @@
+/* ===================================================
+   PET BOUTIQUE - FOLHA DE ESTILOS (CSS)
+   =================================================== */
+
+/* Reset básico e configurações globais */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Container de largura padrão */
+.conteiner {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Título padrão das seções */
+.titulo-secao {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3c184e;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* ===================================================
+   CABEÇALHO / TOPO
+   =================================================== */
+.topo-container {
+    width: 100%;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.topo-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icone {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.logo-texto h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3c184e;
+    line-height: 1.1;
+}
+
+.logo-texto p {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 400;
+}
+
+.topo-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topo-links a {
+    text-decoration: none;
+    color: #3c184e;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.topo-links a:hover {
+    background-color: #3c184e;
+    color: #ffffff;
+}
+
+/* ===================================================
+   BANNER PRINCIPAL COM EFEITO PARALLAX
+   =================================================== */
+.banner-parallax {
+    background-image: url('img/banner-topo.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.banner-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 680px;
+    width: 100%;
+    padding: 45px 35px;
+    text-align: center;
+}
+
+.banner-card h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #3c184e;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.btn-contato {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #3c184e;
+    color: #ffffff;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(60, 24, 78, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contato img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.btn-contato:hover {
+    background-color: #55236f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(60, 24, 78, 0.4);
+}
+
+/* ===================================================
+   SEÇÃO SERVIÇOS
+   =================================================== */
+.secao-servicos {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.lista-servicos {
+    list-style: none;
+    margin-bottom: 45px;
+}
+
+.lista-servicos li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.lista-servicos li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #3c184e;
+}
+
+.lista-servicos li strong {
+    font-style: italic;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* Galeria com as 5 fotos dos serviços */
+.galeria-servicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.galeria-servicos img {
+    width: 150px;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.galeria-servicos img:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* ===================================================
+   FAIXAS ROXAS (DESTAQUES & REDES SOCIAIS)
+   =================================================== */
+.faixa-roxa {
+    background-color: #3c184e;
+    color: #ffffff;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.faixa-texto {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.faixa-texto strong em {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.redes-sociais a {
+    display: inline-flex;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.redes-sociais a:hover {
+    transform: scale(1.2);
+    opacity: 0.85;
+}
+
+.redes-sociais img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+    display: block;
+}
+
+/* ===================================================
+   SEÇÃO MARCAS
+   =================================================== */
+.secao-marcas {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.grade-marcas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px 25px;
+    align-items: center;
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.marca-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 85px;
+}
+
+.marca-item img {
+    max-width: 140px;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.marca-item img:hover {
+    transform: scale(1.1);
+}
+
+/* ===================================================
+   SEÇÃO ONDE ESTAMOS
+   =================================================== */
+.secao-onde-estamos {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.subtitulo-secao {
+    font-size: 16px;
+    color: #555555;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 35px;
+}
+
+.mapa-conteiner {
+    max-width: 820px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.mapa-conteiner iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    display: block;
+}
+
+/* ===================================================
+   RODAPÉ
+   =================================================== */
+.rodape {
+    background-color: #3c184e;
+    color: #ffffff;
+    padding: 22px 20px;
+}
+
+.rodape-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.rodape p {
+    margin: 0;
+    color: #ffffff;
+}
+
+.link-voltar-topo {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.link-voltar-topo:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   =================================================== */
+
+/* Tablets e Telas Médias (<= 768px) */
+@media (max-width: 768px) {
+    .topo-conteudo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .banner-parallax {
+        min-height: 440px;
+        background-attachment: scroll; /* Melhora compatibilidade em mobile */
+    }
+
+    .banner-card {
+        padding: 35px 20px;
+    }
+
+    .banner-card h2 {
+        font-size: 26px;
+    }
+
+    .titulo-secao {
+        font-size: 26px;
+    }
+
+    .faixa-texto {
+        font-size: 22px;
+    }
+
+    /* Galeria dos serviços com quebra fluida */
+    .galeria-servicos {
+        flex-wrap: wrap;
+        border-radius: 8px;
+        box-shadow: none;
+        gap: 10px;
+    }
+
+    .galeria-servicos img {
+        width: 130px;
+        height: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Grade de marcas em 2 colunas */
+    .grade-marcas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Smartphones (<= 480px) */
+@media (max-width: 480px) {
+    .banner-card h2 {
+        font-size: 22px;
+    }
+
+    .btn-contato {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .lista-servicos li {
+        font-size: 14px;
+    }
+
+    .faixa-texto {
+        font-size: 19px;
+    }
+
+    .galeria-servicos img {
+        width: 100px;
+        height: 160px;
+    }
+
+    .mapa-conteiner iframe {
+        height: 300px;
+    }
+}
